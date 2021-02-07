@@ -21,7 +21,7 @@ np.ones(4) #lo mismo que zeros pero con ones
 #evenly spaced numbers in an interval
 np.linspace(0,10,3) #quiero q empiece en 0, vaya a 10 y quiero que hayan solo 3 numeros, siempre tiene el mismo space, spacing out evenly
 np.linspace(0,10,30)
-np.eye(4) # square matrix lleno de 0 donde diagonalmente hay 1
+np.eye(4) # square matrix lleno de 0 donde diagonalmente hay 1, tambien llamdo identity matrix 
 
 #numpy random library
 np.random.rand(1) #me da un numero entre 0 y 1

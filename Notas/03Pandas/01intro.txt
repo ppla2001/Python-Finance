@@ -1,0 +1,1 @@
+Hace falta descargar pandas con pip install pandas 
