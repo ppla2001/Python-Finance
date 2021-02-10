@@ -1,1 +1,7 @@
 Hace falta descargar pandas con pip install pandas 
+tambien hay q descargar pip install xlrd
+pip install openpyxl
+pip install lxml
+pip install html5lib
+pip install BeautifulSoup4
+pip install sqlalchemy
