@@ -85,3 +85,37 @@ ax.plot(x,x**3,label='X Cubed')
 
 ax.legend(loc='best') #checks if there is a label for each plot and matches labels with line, loc= es la location q quiero q esten las labels 
 # %%
+#Plot Appearance
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,y,color='#FF8C00',linewidth=3,alpha=0.5) #color toma strings o rgb hex codes, alpha es la transparencia
+# %%
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,y,color='purple',lw=3,linestyle='--') #Jupyter notebook para ver cuales linestyle hay
+# %%
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,y,color='#FF8C00',lw=3,ls='-',marker='o',
+        markersize=10,markerfacecolor='yellow',
+        markeredgewidth=3,markeredgecolor='green') #Jupyter notebook para ver cuales markers hay
+# %%
+#Setear de donde a donde quiero ver el graph (ZOOM)
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,y,color='#FF8C00',lw=3,ls='--')
+ax.set_xlim([0,1]) #lower bound to upper bound
+ax.set_ylim([0,2])
+# %%
+#Special Plot Types
+plt.scatter(x,y)
+# %%
+from random import sample
+data = sample(range(1, 1000), 100)
+plt.hist(data)
+# %%
+data = [np.random.normal(0, std, 100) for std in range(1, 4)]
+
+# rectangular box plot
+plt.boxplot(data,vert=True,patch_artist=True);
+# %%
