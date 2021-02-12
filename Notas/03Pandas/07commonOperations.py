@@ -1,3 +1,5 @@
+#Para que funcione hay que pip install ipykernel
+#%% 
 import numpy as np
 import pandas as pd 
 
@@ -31,6 +33,7 @@ df.sort_values(by='col2')
 df.isnull()
 
 #pivot table 
+#%%
 data = {'A':['foo','foo','foo','bar','bar','bar'],
      'B':['one','one','two','two','one','one'],
        'C':['x','y','x','y','x','y'],
@@ -39,3 +42,4 @@ data = {'A':['foo','foo','foo','bar','bar','bar'],
 df = pd.DataFrame(data)
 df
 df.pivot_table(values='D',index=['A','B'],columns='C') 
+# %%
