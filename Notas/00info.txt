@@ -1,0 +1,1 @@
+Cuando uso #%% es para que me ponga los datos como si estuviera en un jupyter notebook
