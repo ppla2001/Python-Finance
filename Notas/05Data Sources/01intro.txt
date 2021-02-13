@@ -1,0 +1,9 @@
+Para pandas datareader hay que:
+pip install pandas-datareader
+
+Para quandl:
+pip install quandl
+
+COMO AGARRAR LOS CODIGOS PARA quandl:
+vas a core financial data
+elegis cualquiera de todos y entras
