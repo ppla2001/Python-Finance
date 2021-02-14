@@ -1,2 +1,3 @@
 Hay q pip install matplotlib
 pip install seaborn
+pip install plotly, https://plotly.com/python/pandas-backend/ para hacer los graficos interactive
