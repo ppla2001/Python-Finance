@@ -1,0 +1,4 @@
+hay que descargarse
+pip install --upgrade mplfinance
+en vez de usar from matplotlib.finance import candlestick_ohlc
+se usa from mpl_finance import candlestick_ohlc
