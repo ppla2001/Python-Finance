@@ -1,0 +1,2 @@
+pip install statsmodels
+pip install --upgrade --no-deps statsmodels (me funciono con el de arriba tambien)

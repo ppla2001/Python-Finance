@@ -5,7 +5,6 @@ import numpy as np
 import matplotlib.pyplot as plt 
 # %%
 #Parte 1
-#FIJARME EN SOLUTIONS COMO SE HACIA PARA SACAR INFO SIN TENER CSV
 tesla = pd.read_csv('C:\\Users\\plape\\OneDrive\\Escritorio\\Python-Finance\\Python-Finance\\Notebooks\\07-Stock-Market-Analysis-Capstone-Project\\Tesla_Stock.csv',index_col='Date',parse_dates=True)
 
 ford = pd.read_csv('C:\\Users\\plape\\OneDrive\\Escritorio\\Python-Finance\\Python-Finance\\Notebooks\\07-Stock-Market-Analysis-Capstone-Project\\Ford_Stock.csv',index_col='Date',parse_dates=True)
@@ -136,4 +135,22 @@ scatter_matrix(box_df,figsize=(8,8),alpha=0.2,hist_kwds={'bins':100});
 # %%
 box_df.plot(kind='scatter',x='Ford Returns',y='General Motors Returns',alpha=0.5,figsize=(8,8))
 #Tend to be correlated, we can do a linear regression graph
+# %%
+#CUMULATIVE RETURN
+tesla['Cumulative Return'] = ( 1 + tesla['returns'] ).cumprod()
+# %%
+tesla
+# %%
+ford['Cumulative Return'] = ( 1 + ford['returns'] ).cumprod()
+# %%
+ford
+# %%
+general_m['Cumulative Return'] = ( 1 + general_m['returns'] ).cumprod()
+# %%
+general_m
+# %%
+tesla['Cumulative Return'].plot(label='Tesla',figsize=(16,8))
+ford['Cumulative Return'].plot(label='Ford',figsize=(16,8))
+general_m['Cumulative Return'].plot(label='General Motors',figsize=(16,8))
+plt.legend()
 # %%
