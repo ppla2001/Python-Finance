@@ -1,2 +1,5 @@
 pip install statsmodels
 pip install --upgrade --no-deps statsmodels (me funciono con el de arriba tambien)
+
+ets -> Error, Trend, Seasonality
+ewma -> Exponentially Weighted Moving Average
