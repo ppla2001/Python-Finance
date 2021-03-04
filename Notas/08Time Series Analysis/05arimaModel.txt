@@ -1,0 +1,18 @@
+Leer mas de arima en: https://people.duke.edu/~rnau/411arim3.htm
+Arima Time series model -> No funciona well con historical stock data or secutities data
+but works well with for example trying to predict how many sales will a store produce during the summer or winter 
+financial data doesn't work well with financial data
+
+ARMIA -> AutoRegressive Integrated Moving Average, generalization of AutoRegressive Moving Average (ARMA)
+
+Both models are fitted in time series data for forecast
+
+Types of Arima models 
+Non seasonal Arima and seasonal Arima
+
+Non sasonnal Arima generally denoted as ARIMA(p,d,q) where p,d,q are non-negative integers (leer q son en powerpoint)
+
+
+
+Sationary vs Non-stationary data
+Sationary series has a constant mean and variance over time, will allow model to predict the mean anda variance will be the same in future periods (ver ejemplo en powerpoint)

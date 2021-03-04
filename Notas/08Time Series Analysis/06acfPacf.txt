@@ -1,0 +1,4 @@
+ACF -> Auto Correlation Plots
+PACF -> Partial Auto Correlation Plots
+AR -> Auto Regressive 
+MA -> Moving Average 
