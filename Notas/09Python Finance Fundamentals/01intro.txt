@@ -1,0 +1,1 @@
+Sharpe Ratio is a measure for calculating risk-adjusted return
