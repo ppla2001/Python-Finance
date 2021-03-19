@@ -110,3 +110,55 @@ plt.ylabel('Return')
 plt.scatter(max_sr_vol,max_sr_ret,c='red',s=50,edgecolors='black')
 
 # %%
+#Mathematical Optimization
+def get_ret_vol_sr(weights):
+    weights = np.array(weights)
+    ret = np.sum(log_ret.mean() * weights) *252
+    vol = np.sqrt(np.dot(weights.T,np.dot(log_ret.cov()*252,weights)))
+    sr = ret/vol
+    return np.array([ret,vol,sr])
+# %%
+from scipy.optimize import minimize
+# %%
+def neg_sharpe(weights):
+    return get_ret_vol_sr(weights)[2] * -1
+# %%
+def check_sum(weights):
+    return np.sum(weights) - 1
+# %%
+cons = ({'type':'eq','fun':check_sum})
+# %%
+bounds = ((0,1),(0,1),(0,1),(0,1))
+# %%
+init_guess = [0.25,0.25,0.25,0.25]
+# %%
+opt_results = minimize(neg_sharpe,init_guess,method='SLSQP',bounds=bounds,constraints=cons)
+# %%
+opt_results
+# %%
+opt_results.x
+# %%
+get_ret_vol_sr(opt_results.x)
+# %%
+#Efficient Frontier
+frontier_y = np.linspace(0,0.3,100)
+# %%
+def minimize_vol(weights):
+    return get_ret_vol_sr(weights)[1]
+# %%
+frontier_vol = []
+
+for possible_return in frontier_y:
+    cons = ({'type':'eq','fun':check_sum},
+            {'type':'eq','fun':lambda w: get_ret_vol_sr(w)[0]-possible_return})
+    result = minimize(minimize_vol,init_guess,method='SLSQP',bounds=bounds,constraints=cons)
+    frontier_vol.append(result['fun'])
+# %%
+plt.figure(figsize=(12,8))
+plt.scatter(vol_arr,ret_arr,c=sharpe_arr,cmap='plasma')
+plt.colorbar(label='Sharpe Ratio')
+plt.xlabel('Volatility')
+plt.ylabel('Return')
+
+plt.plot(frontier_vol,frontier_y,'g--',linewidth=3)
+# %%
